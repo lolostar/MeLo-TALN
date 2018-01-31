@@ -1,22 +1,28 @@
 \section{Extraction de termes avec Word2Vec}
-Nous avons entraîné un modèle Word2Vec sur un corpus de comptes rendus de maintenance sur des éoliennes. Ce corpus contient XXXX fiches de maintenance pour une volumétrie de XXXX Mo. Si la taille de ce corpus semble restreinte, nous avons néanmoins obtenu des résultats concluants (fig \ref{fig:w2v}), les textes étant très répétitifs (taille de dictionnaire d'environ 5000 mots). Ajout de l'indice de diversité lexicale.
 
-\begin{figure}[tb]
-    \begin{center}
-        \includegraphics[width=6cm]{figures/w2v}
-    \end{center}
-    \caption{Visualisation des résultats de Word2Vec}\label{fig:w2v}
-\end{figure}
+\subsection{Présentation des données}
+Nous avons entraîné un modèle Word2Vec sur un corpus de comptes rendus de maintenance sur des éoliennes. Ce corpus contient environ 8000 fiches de maintenance. Si la taille de ce corpus semble restreinte, nous avons néanmoins obtenu des résultats concluants (fig), les textes étant très répétitifs ; la taille de notre dictionnaire est d'environ 5000 mots après prétraitements. Nous avons calculé l'indice de richesse lexicale \cite{McKee2000}, quotient entre le nombre d’occurrences d’un token et le nombre total de tokens du texte. Un token est défini comme formé exclusivement de caractères alphabétiques, sans distinguer majuscules et minuscules. Notre corpus comprend 97.065 tokens dont 5887 tokens uniques donnant une richesse lexicale de 0.0607 avant prétraitements.
 
-Vérifier algo
+
+\subsection{Algorithme}
+
 Nous avons mis en place un script python qui effectue plusieurs opérations :
 \begin{enumerate}
 
+\item Si voulu, récupération de données via Elastic Search.
 \item Prétraitements : suppressions des caractères non désirés.
 \item Découpage en phrases et en mots.
-\item Nettoyage des mots : suppression des mots vides.
 \item Appel de TreeTagger \cite{Schmid94probabilisticpart-of-speech} pour un étiquetage morphosyntaxique : nous sommes partis de l'hypothèse que l'apprentissage de Word2Vec serait plus fin avec l'ajout de métadonnées de type morphosyntaxique sur les mots de notre corpus. Word2vec apprend sur la forme, le lemme et la catégorie morphosyntaxique du terme. Nous considérons qu'il s'agit d'une première étape de désambiguïsation.
+\item Nettoyage des mots : suppression des mots vides.
 \item Appel du package gensim en python pour le calcul de la similarité avec Word2Vec.
 \item Création d'une sortie contenant les résultats de Word2Vec au format RDF.
-
+\end{enumerate}
+Cette dernière étape va permettre de créer une base de connaissance sur les résultatss du traitement des documents du corpus  contenant les phrases et mots qu'ils contiennnent et pour chaque mot du corpus :
+\begin{enumerate}
+\item	Son label
+\item	Sa fréquence
+\item	Sa catégorie morphosyntaxique
+\item	Son lemme
+\item	Les 15 premières phrases dans lesquelles il apparaît
+\item	Ses 15 candidats termes
 \end{enumerate}
