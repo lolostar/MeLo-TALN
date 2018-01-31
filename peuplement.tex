@@ -2,15 +2,7 @@
 
 Problématique du bruit
 
-Nous avons développé une application web, Curiositext, permettant à un utilisateur non expert de visualiser les résultats de Word2Vec et de peupler semi-automatiquement une ontologie métier. Celle-ci est indépendante de l'architecture de l'application ce qui permet d'utiliser CuriosiText pour des cas d'usage très divers, sans dépendre d'un domaine spécifique. Dans un premier temps, l'utilisateur est invité à charger un corpus texte local ou peut effectuer une requête à l'aide d'Elastic Search pour récupérer des données distantes. Il peut ensuite appliquer Word2Vec sur ses données. Les paramètres de base de la méthode sont paramétrables à savoir :
-
-\begin{enumerate}
-\item	la dimension des vecteurs,
-\item	la taille de la fenêtre,
-\item		la fréquence minimale d'apparition d’un terme pour l’apprentissage,
-\item	le modèle (CBOW ou Skip-Gram),
-\item	le nombre d’itérations.
-\end{enumerate}
+Nous avons développé une application web, Curiositext, permettant à un utilisateur non expert de visualiser les résultats de Word2Vec et de peupler semi-automatiquement une ontologie métier. Celle-ci est indépendante de l'architecture de l'application ce qui permet d'utiliser CuriosiText pour des cas d'usage très divers, sans dépendre d'un domaine spécifique. Dans un premier temps, l'utilisateur est invité à charger un corpus texte local ou peut effectuer une requête à l'aide d'Elastic Search pour récupérer des données distantes. Il peut ensuite appliquer Word2Vec sur ses données. Les paramètres de base de la méthode sont paramétrables à savoir : la dimension des vecteurs, la taille de la fenêtre, la fréquence minimale d'apparition d’un terme pour l’apprentissage, le modèle (CBOW ou Skip-Gram) et le nombre d’itérations.
 
 \begin{figure}[tb]
     \begin{center}
@@ -19,7 +11,7 @@ Nous avons développé une application web, Curiositext, permettant à un utilis
     \caption{Ontologie métier}\label{fig:metier}
 \end{figure}
 
-L'utilisateur accède ensuite à la troisième partie de l'application à savoir le peuplement d'une ontologie. Il doit charger l’ontologie métier (fig \ref{metier}) développée en amont à peupler. Pour ce faire, nous avons mis en place un scénario de peuplement de l'ontologie finale illustré ici par la requête du terme "changement".
+L'utilisateur accède ensuite à la troisième partie de l'application à savoir le peuplement d'une ontologie. Il doit charger l’ontologie métier (fig \ref{fig:metier}) développée en amont à peupler. Pour ce faire, nous avons mis en place un scénario de peuplement de l'ontologie finale illustré ici par la requête du terme "changement".
 Pour aider au peuplement de l'ontologie, une ontologie linguistique (fig \ref{ling} a été intégrée dans l'application. L'utilisateur doit renseigner pour le terme requêté sa classe lexicale (Terme\_Canonique) et sa classe métier (Action).
 
 \begin{figure}[tb]
