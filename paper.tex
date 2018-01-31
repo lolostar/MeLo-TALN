@@ -1,0 +1,62 @@
+%% Exemple de source LaTeX pour un article soumis à TALN 2018
+\documentclass[10pt,twoside]{article}
+
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+
+% faire les \usepackage dont vous avez besoin AVANT le \usepackage{taln2018}
+
+\usepackage{taln2018}
+\usepackage[frenchb]{babel}
+
+% Titre complet
+\title{Extraction automatique et visualisation de termes de maintenance pour le peuplement d'ontologies métiers}
+
+\author{Meryl Bothua\quad Laurent Pierre\\
+  {\small
+    EDF Lab Paris-Saclay,7 bd Gaspard Monge, 91120 PALAISEAU, France\\
+    \texttt{
+      meryl.bothua@edf.fr, laurent.pierre@edf.fr \\
+}}}
+
+
+\begin{document}
+\maketitle
+
+\resume{EDF développe une chaine logicielle destinée à extraire et analyser l'information contenue dans les rapports de maintenance. Les expériences menées avec Word2Vec nous ont permis de créer des ressources lexicales à partir de ces documents. A partir de celles-ci, nous peuplons des ontologies et visualisons les résultats à l'aide d'un outil de navigation dans des graphes RDF. Nous décrivons ensuite le processus semi\-automatique de correction et de validation des termes lexicaux destinés à peupler l'ontologie finale.
+}
+
+\abstract{Automated Extraction and Visualization of Terms Related to Maintenance in Order to Populate Business Ontologies}{
+EDF is developing a process dedicated to extract and analyze information from maintenance reports.  Experiments with Word2Vec were conducted for creating lexical resources from these sets of documents.  We populated ontologies from the Word2Vec outputs in order to visualize and check the accuracy of the results, thanks to our ontology driven RDF graph UI.  We describe the semi\-automation of the processing line dedicated to correction and validation of lexical terms intended to populate the final ontology.
+}
+
+\motsClefs
+  {similarité entre mots, plongement de mots, visualisation de données, recherche d'informations, peuplement d'ontologie}
+  {word similarity, word embedding, data visualization, information retrieval, ontology population}
+
+
+\input{introduction}
+
+\input{contexte}
+
+\input{extraction}
+
+\input{exploration}
+
+\input{peuplement}
+
+\input{conclusion}
+
+
+
+
+\bibliographystyle{taln2018}
+\bibliography{references}
+%% commande no-cite pour inclure dans la bibliographie des références
+%% qui ne sont pas citées dans le corps de l'article
+\nocite{}
+
+%%================================================================
+\end{document}
