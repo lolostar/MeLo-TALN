@@ -1,0 +1,16 @@
+\section{Evaluation}
+Nous avons réalisé une analyse qualitative en considérant les termes présents dans le lexique métier constitué manuellement. L'apport de Word2Vec a ainsi pu être démontré, certains termes ayant été omis par l'humain. Nous avons ainsi pu détecter automatiquement les types d’éléments suivants :
+
+\begin{enumerate}
+\item des pluriels (ex : « moteur », « moteurs »)
+\item 	des abréviations (ex : pour « transfo », « transformateur », qui n’était pas présent dans le lexique constitué manuellement)
+\item 	des fautes/mots collés (« bloc » et « dublock »)
+\item 	des hyponymes (pour « équipements » on retrouve « modem », « serveur » etc.)
+\item 	des mots de la même famille (ex : « ventilateur » et « ventilation »)
+\item 	des synonymes (ex : pour « remplacement » on retrouve avec W2V « changement », « échange » etc.
+\item 	des phénomènes de multilinguisme : pour le terme « contrôle » : « controle » sans accent, termes anglais associés plus ou moins bien orthographiés « cheik » et « check ».
+\item 	pour le terme « arrêt » on retrouve « stop »
+
+\end{enumerate}
+
+Il nous reste à présent à effectuer une analyse quantitative poussée pour établir le taux de rappel et de précision en injectant ces lexiques à notre chaîne de traitement. Cette étape pourra être facilité par notre outil d’exploration de termes (Partie 4) et par CuriosiText (Partie 5).
