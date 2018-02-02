@@ -1,16 +1,3 @@
 \section{Evaluation}
-Nous avons réalisé une analyse qualitative en considérant les termes présents dans le lexique métier constitué manuellement. L'apport de Word2Vec a ainsi pu être démontré, certains termes ayant été omis par l'humain. Nous avons ainsi pu détecter automatiquement les types d’éléments suivants :
-
-\begin{itemize}
-\item des pluriels (ex : « moteur », « moteurs »)
-\item 	des abréviations (ex : pour « transfo », « transformateur », qui n’était pas présent dans le lexique constitué manuellement)
-\item 	des fautes/mots collés (« bloc » et « dublock »)
-\item 	des hyponymes (pour « équipements » on retrouve « modem », « serveur » etc.)
-\item 	des mots de la même famille (ex : « ventilateur » et « ventilation »)
-\item 	des synonymes (ex : pour « remplacement » on retrouve avec W2V « changement », « échange » etc.
-\item 	des phénomènes de multilinguisme : pour le terme « contrôle » : « controle » sans accent, termes anglais associés plus ou moins bien orthographiés « cheik » et « check ».
-\item 	pour le terme « arrêt » on retrouve « stop »
-
-\end{itemize}
-
-Il nous reste à présent à effectuer une analyse quantitative poussée pour établir le taux de rappel et de précision en injectant ces lexiques à notre chaîne de traitement. Cette étape pourra être facilitée par notre outil d’exploration de termes et par CuriosiText.
+Nous avons réalisé une analyse qualitative en considérant les termes présents dans le lexique métier constitué manuellement. L'apport de Word2Vec a ainsi pu être démontré, certains termes ayant été omis par l'annotateur. Nous avons ainsi détecté automatiquement plusieurs éléments pertinents à savoir : des pluriels (ex : \texttt{moteur} / \texttt{moteurs}), des abréviations (ex : \texttt{transfo} / \texttt{transformateur}), des mots collés (\texttt{bloc} / \texttt{dublock}), des fautes de frappe (ex : \texttt{changement} / \texttt{hamgement}), des hyponymes (pour \texttt{équipements} on retrouve \texttt{modem}, \texttt{serveur}), des mots du même radical (ex : \texttt{ventilateur} / \texttt{ventilation}), des synonymes (ex : pour \texttt{remplacement} on retrouve \texttt{changement}, \texttt{échange}) et des phénomènes de multilinguisme (ex \texttt{contrôle} / \texttt{cheik} / \texttt{check}). 
+Il nous reste à présent à effectuer une analyse quantitative pour établir le taux de rappel et de précision en injectant ces lexiques à notre chaîne de traitement. Cette étape pourra être facilitée par nos outils d’exploration de termes et de peuplement, respectivement SemVue et CuriosiText.

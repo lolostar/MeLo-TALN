@@ -1,27 +1,23 @@
 \section{Exploration de termes sous forme de graphe RDF}
 
-Afin de visualiser les résultats de Word2Vec formatés en RDF, nous avons créé une première ontologie modélisée sur Word2Vec. Elle est un premier palier en vue du peuplement d'ontologies métiers.
-
+Afin de visualiser les résultats de Word2Vec formatés en RDF, nous avons créé une première ontologie modélisée sur Word2Vec. Elle sert de premier palier en vue du peuplement d'ontologies métiers.
+%
 \begin{figure}[tb]
     \begin{center}
-        \includegraphics[width=6cm]{figures/gtype}
+        \includegraphics[width=7cm]{figures/gtype}
     \end{center}
     \caption{Graphe Type de l’ontologie pour Word2Vec}\label{fig:gtype}
 \end{figure}
-
-
-Nous souhaitions une visualisation sous forme de graphe où pour chaque mot du corpus, considéré comme étant un Représentant, nous affichons ses quinze Candidats Termes les plus similaires.
-
-Pour visualiser ces résultats, nous avons utilisé l'outil SemVue développé en 2014 à EDF. Cet outil propose une interface de navigation dans un graphe RDF extrêmement facile à mettre en œuvre à chaque étape du développement d’un entrepôt de données. Le cœur de l’interface est défini à l’aide d’une ontologie associée à la modélisation métier proprement dite dans un entrepôt de données \cite{mnpho14parallel-materialisation-RDFox} et permet ainsi à l’interface web de lancer des requêtes SPARQL. La stratégie d’affichage de SemVue est définie à l’aide d’axiomes OWL, ceux-ci configurant dynamiquement le sous-graphe à exposer à l’utilisateur.
-
-Cette première visualisation nous a permis d'optimiser le paramétrage de Word2Vec et de valider qualitativement nos résultats. Ainsi nous observons pour le terme changement \ref{fig:w2v}
-
+%
+Nous souhaitions une visualisation sous forme de graphe où pour chaque mot du corpus, considéré comme étant de type \texttt{Representant}, nous affichons ses quinze termes candidats (classe \texttt{Candidat}) les plus similaires.
+Pour visualiser ces résultats, nous avons utilisé l'outil SemVue développé à EDF. Cet outil propose une interface de navigation dans un graphe RDF extrêmement facile à mettre en œuvre à chaque étape du développement d’un entrepôt de données. Le cœur de l’interface est défini à l’aide d’une ontologie associée à la modélisation métier proprement dite dans un entrepôt de données \cite{mnpho14parallel-materialisation-RDFox} et permet ainsi à l’interface web de lancer des requêtes SPARQL. La stratégie d’affichage de SemVue est définie à l’aide d’axiomes OWL, ceux-ci configurant dynamiquement le sous-graphe à exposer à l’utilisateur.
+Cette première visualisation nous a permis d'optimiser le paramétrage de Word2Vec et de valider qualitativement nos résultats (fig \ref{fig:gtype}).
+%
 \begin{figure}[tb]
     \begin{center}
-        \includegraphics[width=6cm]{figures/w2v}
+        \includegraphics[width=7cm]{figures/w2v}
     \end{center}
     \caption{Graphe sur le mot changement}\label{fig:w2v}
 \end{figure}
-
-
+%
 Afin de visualiser les résultats de Word2Vec formatés en RDF, nous avons créé une première ontologie modélisée sur Word2Vec. Elle est un premier palier en vue du peuplement d'ontologies métiers.
